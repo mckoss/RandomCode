@@ -1,0 +1,27 @@
+def isPal(x):
+	cs = []	
+	for i in range(len(str(x))):
+		if(str(x)[len(str(x))-i-1] != str(x)[i]):
+			return False
+	else:
+		return True
+
+#print "323: " + str(isPal(323))
+#print "324: " + str(isPal(324))
+#print "32423: " + str(isPal(32423))
+#print "1324231: " + str(isPal(1324231))
+
+def biggestPal():
+	fin = []
+	for i in range(999, 99, -1):
+		for j in range(999, i-50, -1):
+			if isPal(i*j):
+				if (i*j == 906609):
+					print i 
+					print j
+				fin.append(i*j)
+	return sorted(fin)
+
+
+
+print biggestPal()
